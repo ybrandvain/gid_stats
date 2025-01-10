@@ -1,0 +1,50 @@
+# R Bootcamp
+
+We begin with an `R` bootcamp. As you will see throughout this book, `R` is a popular language for statistical programming with a large community of users, particularly in biology. <https://cleaning-data-r.ala.org.au/>
+
+## Goals
+
+Programming is a foundational skill in data science and statistics, enabling you to work efficiently with complex datasets. Mastering `R` provides you with the tools to analyze, visualize, and interpret data, fostering critical insights and reproducibility in your research. The specific objectives of this "Bootcamp" are:
+
+```{r}
+#| echo: false
+#| column: margin 
+#| label: fig-experience
+#| fig-cap: "Most of you have very little programming experience, but some of you have a lot of experience."
+par(mar = c(6, 8, 4, 1))
+hist(c(1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 7, 8), 
+     breaks = 1:11 - 0.5,
+     main = "Previous Programming\nExperience (n=18)",
+     xlab = "low                                             high",
+     col = "cornflowerblue",
+     xaxt = "n", cex.axis = 1.75, cex.lab = 2, cex.main = 2)
+axis(1, at = 1:10, labels = 1:10, cex.axis = 1.75)
+```
+
+1.  **Get everyone up to speed on reading, writing, and debugging code in `R`.**
+    -   As shown in @fig-experience, students in this course typically have a wide range of prior programming experience. Whether you are a beginner or have significant experience, this bootcamp will help everyone build essential skills. Beginners will quickly get up to speed, and advanced users will discover new techniques and have opportunities to support their peers.
+2.  **Focus on understanding `R`'s philosophy and solving programming problems.**
+    -   While writing elegant code is a valuable skill, the true art of programming lies in diagnosing issues and finding the resources to resolve them. This bootcamp emphasizes practical problem-solving over perfection.
+3.  **Prepare for advanced topics like modeling.**
+    -   The second part of this book focuses on statistical modeling, which requires both coding expertise and conceptual understanding. Building a strong foundation in `R` programming now will allow you to focus on the intellectual challenges of modeling later, without getting bogged down by programming obstacles.
+
+## A "Base R" Approach
+
+As `R` has evolved over time and its capabilities can be extended with packages (we will discuss this soon), different "dialects" of `R` have emerged. The two most common and widely used approaches are:
+
+-   **Base `R`:** Built on the standard `R` program you download. This approach feels more like traditional programming, offering a high degree of control and flexibility for complex tasks.\
+-   **Tidyverse:** A specific and highly standardized set of packages designed for data science workflows. It emphasizes clarity, consistency, and ease of use for common data manipulation and visualization tasks.
+
+In this book, we focus exclusively on Base `R` programming. This is not because it is better than the Tidyverse—both have strengths—but because learning Base `R` will build a strong foundation for the second part of this course, which focuses on modeling. For example, Base `R`'s explicit programming style will prepare you to understand and debug complex code, work in environments where Tidyverse packages might not be available, and appreciate the underlying principles of R programming.
+
+If you already know how to accomplish certain tasks with Tidyverse tools, I encourage you to invest the time in learning the equivalent approaches in Base `R`. While it may feel redundant at first, this foundational knowledge will make you a more versatile and effective R programmer in the long term.
+
+### The `R` philosophy
+
+This book's focus on Base `R` is rooted in the philosophy behind its design. John Chambers, the creator of `S` (the precursor to `R`) and a core member of the `R` development team, explained:
+
+> “\[W\]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important.”
+>
+> Chambers, J.M. "Stages in the Evolution of S"
+
+Our goal aligns with this vision: to help you start as an `R` user and smoothly transition into becoming an `R` developer as your skills and needs evolve.

@@ -1,4 +1,31 @@
+/.quarto/
+# Allow specific file types
+!.qmd
+!.yml
+!.Rproj
+!.bib
+!*.jpg
+!*.png
+
+# Allow .jpg files in subdirectories
+!**/*.jpg
+
+# Exclude common system files and temporary files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+*.tex
+*.pdf
+*.log
+*.aux
+*.toc
+*.out
+*.gz
+*.zip
+*.tar
+*.tar.gz
+.DS_Store
+Thumbs.db
+
+

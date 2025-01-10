@@ -1,21 +1,23 @@
 project:
-  type: manuscript
+  type: book
 
-manuscript:
-  article: index.qmd
+book:
+  title: "gidStats"
+  author: "Gideon Bradburd & Yaniv Brandvain"
+  date: "`r Sys.Date()`"
+  chapters:
+    - index.qmd
+    - part: rbootcamp/chapters/Rbootcamp/Rbootcamp.qmd
+      chapters: 
+        - rbootcamp/chapters/intro/intro.qmd
+
+bibliography: references.bib
 
 format:
   html:
-    comments:
-      hypothesis: true
-  docx: default
-  jats: default
-
-  # (other formats)
-  # pdf: default
-
-execute:
-  freeze: true
+    theme: cosmo
+    css: include/webex.css
+    include-after-body: include/webex.js
 
 editor: visual
 
