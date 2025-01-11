@@ -21,12 +21,11 @@ hist(c(1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 7, 8),
 axis(1, at = 1:10, labels = 1:10, cex.axis = 1.75)
 ```
 
-1.  **Get everyone up to speed on reading, writing, and debugging code in `R`.**
-    -   As shown in @fig-experience, students in this course typically have a wide range of prior programming experience. Whether you are a beginner or have significant experience, this bootcamp will help everyone build essential skills. Beginners will quickly get up to speed, and advanced users will discover new techniques and have opportunities to support their peers.
-2.  **Focus on understanding `R`'s philosophy and solving programming problems.**
-    -   While writing elegant code is a valuable skill, the true art of programming lies in diagnosing issues and finding the resources to resolve them. This bootcamp emphasizes practical problem-solving over perfection.
-3.  **Prepare for advanced topics like modeling.**
-    -   The second part of this book focuses on statistical modeling, which requires both coding expertise and conceptual understanding. Building a strong foundation in `R` programming now will allow you to focus on the intellectual challenges of modeling later, without getting bogged down by programming obstacles.
+**Get everyone up to speed on reading, writing, and debugging code in `R`:**  As shown in @fig-experience, students in this course typically have a wide range of prior programming experience. Whether you are a beginner or have significant experience, this bootcamp will help everyone build essential skills. Beginners will quickly get up to speed, and advanced users will discover new techniques and have opportunities to support their peers.  
+
+**Focus on understanding `R`'s philosophy and solving programming problems:** While writing elegant code is a valuable skill, the true art of programming lies in diagnosing issues and finding the resources to resolve them. This bootcamp emphasizes practical problem-solving over perfection.  
+
+**Prepare for advanced topics like modeling:** The second part of this book focuses on statistical modeling, which requires both coding expertise and conceptual understanding. Building a strong foundation in `R` programming now will allow you to focus on the intellectual challenges of modeling later, without getting bogged down by programming obstacles.
 
 ## A "Base R" Approach
 
