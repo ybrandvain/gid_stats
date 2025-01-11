@@ -72,7 +72,7 @@ Because `R` is script-based and has so many capabilities, two incredible benefit
 include_graphics("images/Rbenefits.png")
 ```
 
-### Getting started with `R`
+## Getting started with `R`
 
 ```{r}
 #| echo: false
@@ -82,21 +82,65 @@ include_graphics("images/Rbenefits.png")
 include_graphics("images/rUse.png")
 ```
 
-Learning R is like learning a new language!!! The best way to learn it is by immersion. Our basic philosophy for learning `R` goes as follows:
+As noted in the previous section, learning R is like learning a new language!!! The best way to learn it is by immersion. Our basic philosophy for learning `R` goes as follows:
 
-1.  **Learn basic functionality of R!**
+1.  Learn basic functionality of R!
 2.  Gain comfort with the logic of R
-    -   Get ok with not knowing, makign mistakes, asking for help, and not having "the best" solution .\
+    -   Get ok with not knowing, making mistakes, asking for help, and not having "the best" solution .\
 3.  Learn to solve common issues in R code
 4.  Layer on new coding concepts
-5.  Practice on real data until it doesn’t feel like a foreign land
+5.  Practice on real data until it doesn’t feel like a foreign land.  
 
-## Installing and Opening R.
+:::{.callout-note}
+## It's OK to not get this all right away.
 
-Before you can use `R` you must download and install it$^*$. [$^*$ **This is not strictly true.** You can use `R` online via [posit cloud](https://posit.cloud/). This is a "freemium" service and the free plan is unlikely to meet your needs.]{.column-margin}
+A problem with learning (and teaching) a knew language is that so much is new at the same time. As we open `R` and RStudio, we will very quickly introduce R concepts like variable assignment, opening up an R Script, and working with functions. It is OK if you don't fully get this now -- we introduce them to orient you to R(Studio) we will return to these topics in more detail soon!
 
-1.  Download and install `R` from [CRAN](https://www.r-project.org/).
-    -   See [Roger Peng]((https://rdpeng.org/))'s tutorial on installing `R` [on a mac](https://youtu.be/uxuuWXU-7UQ) or [on a PC](https://www.youtube.com/watch?v=Ohnk9hcxf9M).\
+Even when we do introduce things in nmore detail, it takes time and practice to sink in -- being given the deifnitaion of a word in a foreign language does not mean you know it all of the sudden. But using it, and hearing it a lot in context will ehlp you get there.
+:::
+
+### Downloading and Installing and Opening R.
+
+Before you can use `R` you must download and install it$^*$. [$^*$ **This is not strictly true.** You can use `R` online via [posit cloud](https://posit.cloud/). This is a "freemium" service and the free plan is unlikely to meet your needs.]{.column-margin} So, to get started, **download `R` from [CRAN](https://www.r-project.org/)**, and follow the associated installation instructions (see below for detailed instructions for your system). 
+
+::: {.panel-tabset}
+
+### Tab 1: PC Installation  
+
+::: {.instalPC  style="background-color: #FDEFB5; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
+If you want a walk through, see [Roger Peng]((https://rdpeng.org/))'s tutorial on installing `R` [on a PC](https://www.youtube.com/watch?v=Ohnk9hcxf9M)].
+
+"To install R on Windows, click the [*Download R for Windows link*](https://cloud.r-project.org/bin/macosx/). Then click the *base* link. Next, click the first link at the top of the new page. This link should say something like *Download R 4.4.2 for Windows* except the 4.4.2 will be replaced by the most current version of R. The link downloads an installer program, which installs the most up-to-date version of R for Windows. Run this program and step through the installation wizard that appears. The wizard will install R into your program files folders and place a shortcut in your Start menu. Note that you’ll need to have all of the appropriate administration privileges to install new software on your machine."     
+
+- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wtih R* ](https://jjallaire.github.io/hopr/) (@grolemund2014).  
+:::
+
+### Tab 2: mac Installation  
+
+::: {.instalmac  style="background-color: #FDEFB5; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
+
+If you want a walk through, see [Roger Peng]((https://rdpeng.org/))'s tutorial on installing `R` [on a mac](https://youtu.be/uxuuWXU-7UQ)].
+
+"To install R on a Mac, click the [*Download R for macOS* link](https://cloud.r-project.org/bin/macosx/). Next, click on the \[newest package link compatible with your computer\]. An installer will download to guide you through the installation process, which is very easy. The installer lets you customize your installation, but the defaults will be suitable for most users. I\'ve never found a reason to change them. If your computer requires a password before installing new progams, you’ll need it here."    
+
+- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wtih R* ](https://jjallaire.github.io/hopr/) (@grolemund2014).  
+:::
+
+
+### Tab 3: Linux Installation   
+
+::: {.instalmac  style="background-color: #FDEFB5; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
+
+
+R comes preinstalled on many Linux systems, but you’ll want the newest version of R if yours is out of date. The CRAN website provides files to build R from source on [Debian], Redhat, SUSE, and Ubuntu systems under the link “Download R for Linux.” Click the link and then follow the directory trail to the version of Linux you wish to install on. The exact installation procedure will vary depending on the Linux system you use. CRAN guides the process by grouping each set of source files with documentation or README files that explain how to install on your system.    
+
+
+- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wtih R* ](https://jjallaire.github.io/hopr/) (@grolemund2014).  
+:::  
+
+:::
+
+
 2.  Open the standalone R program (not RStudio).
 3.  Familiarize yourself with the command prompt `>`.
 
@@ -108,4 +152,103 @@ Think of the R command prompt as your interactive workspace. It awaits your inst
 #| column: body
 #| echo: false
 include_graphics("images/rscreen.png")
+```
+
+### The shortest intro to R  
+
+We will ask you todo somthing here that we will never ask (and you will likely never do) ever again. *Open up the `R` program you just downloaded.*
+
+
+
+## A brief intro to RStudio
+
+### Downloading and Installing RStudio
+
+While you can actually code in the simple `R` interface that comes with `R` (@fig-rscreen), most people use an IDE to make coding in R easier and more efficeint. RStudio— is a powerful IDE designed to enhance your productivity and streamline your experience. RStudio consolidates your scripts, console, and plots into one cohesive workspace, eliminating the scattered feel of off-the-shelf R. It also provides additional panes to help you manage your session and integrates with other more advanced tools.
+
+
+### Installing RStudio
+
+**Before installing RStudio, you must [download](https://www.r-project.org/) and install R.** Of course, you already installed R in the previous chapter, but just reminding you ;). Once you have installed R you are ready to get RStudio!
+
+**Download RStudio** from the [posit website](https://posit.co/download/rstudio-desktop/) -- make sure to download the free version of RStudio Desktop suitable for your operating system. After downloading, **install RStudio** by following the installation instructions. Finally **Launch RStudio** and you will see its user-friendly interface ready for use.
+
+### Orientation to RStudio
+
+```{r}
+#| echo: false
+#| column: margin
+#| label: fig-Rstudio
+#| fig-cap: "What RSutdio looks like when you first open it."
+include_graphics("images/initial_RStudio.png")
+```
+
+When you open RStudio for the first time, you will see three primary panes (@fig-Rstudio... we will discuss these panes in more detail soon!) Navigating to `File > New File > RScript` will open a new R script and reveal the fourth pane.
+
+#### Coding in RStudio {.unnumbered}
+
+Just like in our vanilla R, RStudio does not "know" what you have written until you enter it into memory. There are a few ways to do this, but our preferred way is to highlight the code you intend to run, and then click the `Run` button in the top right portion of the R script pane (Alternatively press Ctrl+Return for Windows/Linux or ⌘+Return on OS X). @fig-Rstudio2 shows that **after entering the code:**
+
+1.  Code (and any of its outputs -- in this case the output of `x + y` which returns `5`) appears in the terminal pane (bottom left).\
+2.  Variables in working memory appear in environment pane (top right).
+
+```{r}
+#| echo: false
+#| column: body
+#| label: fig-Rstudio2
+#| fig-cap: "An image of RStudio with a file open and two lines of code assigning `1` to `x` and `4` to `y`, shown before (**A**) and after (**B**) the code is entered into the working memory by highlighting it and clicking `Run`. Note that after the code is executed, it appears in the R Console pane (bottom left), and the assigned variables are displayed in the Environment pane."
+include_graphics("images/RstudioPanes2.png")
+```
+
+#### A Tour of the RStudio Panes {.unnumbered}
+
+Above we saw that we develop R Scripts in the "Source Pane" (top left), that executed code lives in the "Console Pane (bottom left), and that objects in working memory are shown in the "Environment Pane" (top right). @fig-Rstudio3 also shows that plots are shown in the "Plots Pane" (bottom right).
+
+```{r}
+#| echo: false
+#| column: body
+#| label: fig-Rstudio3
+#| fig-cap: "More panes = less pain. A rbief tour of RStudio's panes."
+include_graphics("images/RstudioPanes3.png")
+```
+
+```{r}
+#| echo: false
+#| column: margin
+#| label: fig-Rstudio4
+#| fig-cap: "Showing the History and Help tabs of panes 3 and 4, respectively."
+include_graphics("images/RstudioPanes4.png")
+```
+
+To summarize and expand slightly:
+
+1.  **Source Pane (Top-Left):**
+    -   Used for writing and editing scripts, R Markdown files etc...
+    -   This is where you write reproducible code that can be saved and reused.
+2.  **Console Pane (Bottom-Left):**
+    -   Directly interacts with R. You can type commands here to execute them immediately.
+    -   Displays output, messages, and error logs.
+3.  **Environment/History Pane (Top-Right):**
+    -   **Environment Tab:** Lists all objects (e.g., data frames, vectors) currently in memory.
+    -   **History Tab:** Tracks all the commands you’ve run in your session (top of @fig-Rstudio4).
+4.  **Files/Plots/Help/Viewer Pane (Bottom-Right):**
+    -   **Plots Tab:** View plots generated during your session.
+    -   **Help Tab:** Access documentation and help files (bottom of @fig-Rstudio4).
+
+### Simple and Useful RStudio Tips and Tricks
+
+RStudio has a bunch of eatures to make your life easier. Here are the three that we find most usefull for people early in their R scripting journey:
+
+**Tab Completion:** Save time and avoid errors by using tab completion. Start typing a function name, variable, or dataset, then press the `Tab` key. RStudio will suggest options, helping you find the correct name or function quickly. Tab completion also works for variable names you’ve already defined, making it easier to reuse them without typing the full name. Additionally, if you’re working with files in your current working directory, you can use tab completion to load or reference files without manually typing their full names, ensuring accuracy and convenience.
+
+**Quick Help with Tab:** If you’re unsure about a function’s arguments or usage, typing the function name followed by an open parenthesis i.e. `(` and pressing `Tab` will display helpful hints, such as the function’s arguments and default values (@fig-tabsuggest shows an example of this for `log`).
+
+**Up Arrow for Recent Commands:** Navigate your command history by pressing the `Up` arrow key in the Console. This retrieves the most recent commands you’ve entered, making it easy to rerun or edit previous code without retyping.
+
+```{r}
+#| echo: false
+#| column: body
+#| label: fig-tabsuggest
+#| fig-cap: "Tab-suggesting help you find your function and rovide a quick summary of how to use the function."
+include_graphics("images/tabsuggest.png")
 ```

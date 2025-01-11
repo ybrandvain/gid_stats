@@ -9,7 +9,7 @@ book:
     - index.qmd
     - part: rbootcamp/chapters/Rbootcamp/Rbootcamp.qmd
       chapters: 
-        - rbootcamp/chapters/intro/intro.qmd
+        - rbootcamp/chapters/setUpandOrientation/setUpandOrientation.qmd
     - references.qmd
 
 bibliography: references.bib
