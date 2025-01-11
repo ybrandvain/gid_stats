@@ -1,0 +1,111 @@
+# Getting up and `R`unning
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(knitr)
+```
+
+::: {.goals style="background-color: #e6fcff; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
+**In this chapter we will:**
+
+**Discuss what R is and why to use R.** Understand what makes R a powerful tool for data analysis and why it’s popular among biologists and data scientists.\
+
+**Download and open `R` and `R` Studio.** 
+
+**Get oriented into RStudio's layout**
+:::
+
+
+
+## What is `R` and why you should use it
+
+```{r}
+#| echo: false
+#| column: margin 
+#| label: fig-experience
+#| fig-cap: "The `R` logo!"
+include_graphics("images/r.jpeg")
+```
+
+
+
+`R` is a computer language and environment for statistical computing & graphics. It is script-based (text computer code) and not GUI-based (not point and click with menus).
+
+-   `R` is open-source and free.\
+-   `R` is excellent for data manipulation, visualization, and modeling.
+-   `R` allows for reproducible research in a single script.
+-   `R` Widely used in academia and industry.
+-   `R`'s powers can be extended by many packages built for statistical and data science tasks.
+
+### When to use `R`
+
+Many of you have likely used Excel previously. Excel is a fine tool for entering and storing data, but it is less useful for analyzing large datasets, makes it difficult to conduct sophisticated statistical analyses, and does not facilitate reproducible analyses. R, on the other hand, allows for scalability, reproducibility, and customization—three things essential for modern data analysis. In summary:
+
+-   Excel is intuitive and good for data entry, as it provides a familiar spreadsheet interface, user-friendly tools for formatting and organizing data, and straightforward options for basic calculations.
+-   R handles big data, advanced statistics, and custom visualizations much better. For instance, R can seamlessly analyze datasets with millions of rows, run advanced statistical models, and create high-quality visualizations (@fig-Ruse).
+
+```{r}
+#| label: fig-Ruse
+#| column: body
+#| fig-cap: "We use `R` all the time!"
+#| echo: false
+include_graphics("images/usingR.png")
+```
+
+### `R`'s core strengths
+
+R’s core strengths lie in its extensive capabilities for statistical analysis and modeling. Virtually every common statistical technique is available through free, community-contributed packages, making it a highly versatile tool for data analysis. R offers a comprehensive set of statistical techniques, including classical tests, linear and nonlinear modeling, time-series analysis, classification, cluster analysis, spatial statistics, and Bayesian methods.
+
+Because `R` is script-based and has so many capabilities, two incredible benefits emerge from using R (as compared to say Excel or jump).
+
+1.  `R` allows start-to-end reproducibility of your research all in a single script!\
+2.  `R` makes it easy to revise and re-run analyses.
+    -   **Rule of thumb:** every analysis must be redone 10–15 times. Plan accordingly.
+
+```{r}
+#| echo: false
+#| column: body 
+#| label: fig-benefits
+#| fig-cap: "Two benefits of using `R`. **A)** You can have your complete analysis in one place. **B)** You can easily change something about your analysis without needing to *redo* everything."
+include_graphics("images/Rbenefits.png")
+```
+
+### Getting started with `R`
+
+```{r}
+#| echo: false
+#| column: margin 
+#| label: fig-learnR
+#| fig-cap: "The best way to learn `R` is to use `R`."
+include_graphics("images/rUse.png")
+```
+
+Learning R is like learning a new language!!! The best way to learn it is by immersion. Our basic philosophy for learning `R` goes as follows:
+
+1.  **Learn basic functionality of R!**
+2.  Gain comfort with the logic of R
+    -   Get ok with not knowing, makign mistakes, asking for help, and not having "the best" solution .\
+3.  Learn to solve common issues in R code
+4.  Layer on new coding concepts
+5.  Practice on real data until it doesn’t feel like a foreign land
+
+## Installing and Opening R.
+
+Before you can use `R` you must download and install it$^*$. [$^*$ **This is not strictly true.** You can use `R` online via [posit cloud](https://posit.cloud/). This is a "freemium" service and the free plan is unlikely to meet your needs.]{.column-margin}
+
+1.  Download and install `R` from [CRAN](https://www.r-project.org/).
+    -   See [Roger Peng]((https://rdpeng.org/))'s tutorial on installing `R` [on a mac](https://youtu.be/uxuuWXU-7UQ) or [on a PC](https://www.youtube.com/watch?v=Ohnk9hcxf9M).\
+2.  Open the standalone R program (not RStudio).
+3.  Familiarize yourself with the command prompt `>`.
+
+Think of the R command prompt as your interactive workspace. It awaits your instructions, providing immediate feedback on calculations and commands (@fig-rscreen).
+
+```{r}
+#| label: fig-rscreen
+#| fig-cap: "The R screen."
+#| column: body
+#| echo: false
+include_graphics("images/rscreen.png")
+```

@@ -47,3 +47,19 @@ This book's focus on Base `R` is rooted in the philosophy behind its design. Joh
 > Chambers, J.M. "Stages in the Evolution of S"
 
 Our goal aligns with this vision: to help you start as an `R` user and smoothly transition into becoming an `R` developer as your skills and needs evolve.
+
+## Important hints for R coding
+
+
+Let me share some wisdom about learning R, from one learner to another.
+
+
+**Most importantly, be patient with yourself.** Every expert R programmer started exactly where you are now. Your understanding will grow naturally as you tackle real problems and challenges. Take it one step at a time, and before you know it, you'll be writing code that would have seemed impossible when you started.  
+
+**`R` is literally a language ande languages take a while to learn.** At first, looking at an unfamiliar alphabet or hearing people speak a foreign language makes no sense. Aluksi vieraan aakkoston katsominen tai vieraan kielen puhumisen kuuleminen ei tunnu lainkaan järkevältä. With time and effort, you can make sense of a bunch of words and sentences but it takes time. Eventually, with practice and immersion we approach fluency. As we said above - being patient with yourself is key -- you are not dumb for not understanding the sentence I pasted above (and if you do understand it it's because you know Finnish, not because you're smart). 
+
+**You don't need to memorize everything.** You have access to dictionaries, translators, etc etc.  Even the pros are constantly Googling stuff! It's not about knowing every single command by heart - it's about having an approach that gets you to a solution -- gogole, other peoples code, books, friends, and ChatGPT are just some of the tools available to you! 
+
+**Don't compare yourself to others.** R will come fast to some, and slower to others. This has absolutely nothing to do with either you intelligence or your long-term potential as a competent R user. It will come (remember what we said about being patient?). 
+
+**Finally start small and don't be afraid to experiment.** There is nothing wrong about typing code that is imperfect and/or does not work out. Start with the simplest way of adresing your problem and see how far you get.  Start small, maybe with some basic data analysis or creating a simple plot. Each little victory builds your confidence. You can always try newand more complex approaches as you go. The key to success is to keep trying, and to be unafraid of failing. 
