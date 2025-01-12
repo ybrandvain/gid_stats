@@ -8,15 +8,15 @@ library(knitr)
 ```
 
 ::: {.goals style="background-color: #e6fcff; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
-**In this chapter we will:**
+**In this chapter we will:**.   
 
-**Discuss what R is and why to use R.** Understand what makes R a powerful tool for data analysis and why it’s popular among biologists and data scientists.\
+- *Discuss what R is and why to use R:* Understand what makes R a powerful tool for data analysis and why it’s popular among biologists and data scientists.      
+- *Download and open `R` and `R` Studio.*      
+- *Get oriented into RStudio's layout.*   
 
-**Download and open `R` and `R` Studio.** 
-
-**Get oriented into RStudio's layout**
 :::
 
+----
 
 
 ## What is `R`? Why use `R`?
@@ -112,7 +112,7 @@ If you want a walk through, see [Roger Peng]((https://rdpeng.org/))'s tutorial o
 
 "To install R on Windows, click the [*Download R for Windows link*](https://cloud.r-project.org/bin/macosx/). Then click the *base* link. Next, click the first link at the top of the new page. This link should say something like *Download R 4.4.2 for Windows* except the 4.4.2 will be replaced by the most current version of R. The link downloads an installer program, which installs the most up-to-date version of R for Windows. Run this program and step through the installation wizard that appears. The wizard will install R into your program files folders and place a shortcut in your Start menu. Note that you’ll need to have all of the appropriate administration privileges to install new software on your machine."     
 
-- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wtih R* ](https://jjallaire.github.io/hopr/ -- @grolemund2014.  
+- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wWith R*](https://jjallaire.github.io/hopr/) -- @grolemund2014.  
 :::
 
 ### Tab 2: mac installation  
@@ -123,7 +123,7 @@ If you want a walk through, see [Roger Peng]((https://rdpeng.org/))'s tutorial o
 
 "To install R on a Mac, click the [*Download R for macOS* link](https://cloud.r-project.org/bin/macosx/). Next, click on the \[newest package link compatible with your computer\]. An installer will download to guide you through the installation process, which is very easy. The installer lets you customize your installation, but the defaults will be suitable for most users. I\'ve never found a reason to change them. If your computer requires a password before installing new progams, you’ll need it here."    
 
-- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wtih R* ](https://jjallaire.github.io/hopr/ -- @grolemund2014.  
+- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming With R*](https://jjallaire.github.io/hopr/) -- @grolemund2014.  
 :::
 
 
@@ -135,16 +135,13 @@ If you want a walk through, see [Roger Peng]((https://rdpeng.org/))'s tutorial o
 R comes preinstalled on many Linux systems, but you’ll want the newest version of R if yours is out of date. The CRAN website provides files to build R from source on [Debian], Redhat, SUSE, and Ubuntu systems under the link “Download R for Linux.” Click the link and then follow the directory trail to the version of Linux you wish to install on. The exact installation procedure will vary depending on the Linux system you use. CRAN guides the process by grouping each set of source files with documentation or README files that explain how to install on your system.    
 
 
-- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming wtih R* ](https://jjallaire.github.io/hopr/ -- @grolemund2014.  
+- From [Appendix A](https://jjallaire.github.io/hopr/a1-starting.html) of [*Hands-On Programming With R*](https://jjallaire.github.io/hopr/) -- @grolemund2014.  
 :::  
 
 :::
 
+### The shortest intro to R  
 
-2.  Open the standalone R program (not RStudio).
-3.  Familiarize yourself with the command prompt `>`.
-
-Think of the R command prompt as your interactive workspace. It awaits your instructions, providing immediate feedback on calculations and commands (@fig-rscreen).
 
 ```{r}
 #| label: fig-rscreen
@@ -154,55 +151,121 @@ Think of the R command prompt as your interactive workspace. It awaits your inst
 include_graphics("images/rscreen.png")
 ```
 
-### The shortest intro to R  
 
-We will ask you todo somthing here that we will never ask (and you will likely never do) ever again. *Open up the `R` program you just downloaded.*
+
+**Open up the `R` program you just downloaded $^*$.** [$^*$ This might be the only time you open `R` like this. As we introduce below, `R` is usually used via RStudio or some other IDE.]{.column-margin}  A boring white screen --the command prompt-- awaits your instructions (@fig-rscreen). The R command prompt is an interactive workspace--it provides immediate feedback on calculations and commands. Start by typing `1 + 1`. You will see that nothing happens until you hit enter, at which point you see something like this:
+
+```{r}
+1 + 1
+```
+
+While R can work ad a calculator, it offers so much more. A key to unlocking R's potential is storing objects in its working memory. This means that `R` remembers what you told it and can work with it. In `R`we assign values to objects with the assignment operator `<-`. So if we wanted to assign one to the object `x` we would type `x <- 1`. 
+
+
+:::{.callout-note collapse=true}  
+## Assignment in `R` example: The search for extraterrestrial life.    
+```{r}
+#| echo: false
+#| column: margin
+#| fig-cap: "The Arecibo message is an interstellar radio message carrying basic information about humanity and Earth that was sent to the globular cluster Messier 13 in 1974. It was meant as a demonstration of human technological achievement, rather than a real attempt to enter into a conversation with extraterrestrials. The image here has color added for clarity. Image and text from [wikipedia](https://en.wikipedia.org/wiki/Arecibo_message)."
+include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Arecibo_message.svg/300px-Arecibo_message.svg.png")
+```
+
+> As I planned the meeting, I realized a few day[s] ahead of time we needed an agenda. And so I wrote down all the things you needed to know to predict how hard it's going to be to detect extraterrestrial life. And looking at them it became pretty evident that if you multiplied all these together, you got a number, N, which is the number of detectable civilizations in our galaxy. This was aimed at the radio search, and not to search for primordial or primitive life forms.
+>
+> Frank Drake
+
+Curious about the probability of life on other plants, Frank Drake derived a simple equation to estimate the number of active, communicative extraterrestrial civilizations in the Milky Way Galaxy [@drake1961]. 
+
+The **Drake equation** states $${\displaystyle N=R_{*} \times f_{\mathrm {p} }\times n_{\mathrm {e} }\times f_{\mathrm {l} }\times f_{\mathrm {i} }\times f_{\mathrm {c} }\times L}$$
+where:  
+
+- $N$ = the number of civilizations in the Milky Way galaxy with which communication might be possible (i.e. which are on the current past light cone);   
+- $R_∗$ = the average rate of star formation in our Galaxy.  
+- $f_p$ = the fraction of those stars that have planets.  
+- $n_e$ = the average number of planets that can potentially support life per star that has planets.   
+- $f_l$ = the fraction of planets that could support life that actually develop life at some point.  
+- $f_i$ = the fraction of planets with life that go on to develop intelligent life (civilizations).  
+- $f_c$ = the fraction of civilizations that develop a technology that releases detectable signs of their existence into space.  
+- $L$ = the length of time for which such civilizations release detectable signals into space.    
+
+**Plugging in lower bounds from Drake's initial guesses we get** (from [wikipedia](https://en.wikipedia.org/wiki/Drake_equation)): 
+
+```{r}
+R_star <- 1    # yr−1 (1 star formed per year, on the average over the life of the galaxy; this was regarded as conservative)
+f_p    <- 0.2  # (one fifth to one half of all stars formed will have planets)
+n_e    <- 1    # (stars with planets will have between 1 and 5 planets capable of developing life)
+f_l    <- 1    # (100% of these planets will develop life)
+f_i    <- 1    # (100% of which will develop intelligent life)
+f_c    <- 0.1  # 0.1 to 0.2 (10–20% of which will be able to communicate)
+L      <- 1000 # somewhere between 1000 and 100,000,000 years
+
+R_star * f_p * n_e * f_l * f_i* f_c * L
+```
+**With these estimates we conclude that there are 20 planets out there trying to communicate with earth -- we should listen up.**
+
+Say we thought that it was ridiculous to assume that 100\% of all habitable planets will develop life and that 100% of plants capable of developing life will develop intelligent life, and thought $f_l$ and $f_i$ would be 0.25, and 0.10, respectively. We can update our R script and get a new answer -- that there are between zero and one planets trying to communicate with us!
+
+```{r}
+f_l    <- 0.25    # (25% of these planets will develop life)
+f_i    <- 0.10    # (10% of which will develop intelligent life)
+
+R_star * f_p * n_e * f_l * f_i * f_c * L
+```
+**Note:** the `#` tells R to ignore the  rest of the line --and what followis it is a comment for human (or extraterrestrial?) eyes only. 
+:::
 
 
 
 ## A brief intro to RStudio
 
-### Downloading and Installing RStudio
-
-While you can actually code in the simple `R` interface that comes with `R` (@fig-rscreen), most people use an IDE to make coding in R easier and more efficeint. RStudio— is a powerful IDE designed to enhance your productivity and streamline your experience. RStudio consolidates your scripts, console, and plots into one cohesive workspace, eliminating the scattered feel of off-the-shelf R. It also provides additional panes to help you manage your session and integrates with other more advanced tools.
+While you can actually code in the simple `R` interface that comes with `R` (@fig-rscreen), most people use an IDE to make coding in R easier and more efficient. RStudio is a powerful IDE designed to enhance your productivity and streamline your experience. RStudio consolidates your scripts, console, and plots into one cohesive workspace.
 
 
-### Installing RStudio
+### Downloading & Installing RStudio
 
-**Before installing RStudio, you must [download](https://www.r-project.org/) and install R.** Of course, you already installed R in the previous chapter, but just reminding you ;). Once you have installed R you are ready to get RStudio!
 
-**Download RStudio** from the [posit website](https://posit.co/download/rstudio-desktop/) -- make sure to download the free version of RStudio Desktop suitable for your operating system. After downloading, **install RStudio** by following the installation instructions. Finally **Launch RStudio** and you will see its user-friendly interface ready for use.
+
+After installing `R` you can download RStudio from the [posit website](https://posit.co/download/rstudio-desktop/) -- make sure to download the free version of RStudio Desktop suitable for your operating system. After downloading, install RStudio by following the installation instructions. Finally Launch RStudio and you will see its user-friendly interface ready for use.
+
+::: {.callout-warning}
+## R Studio requires R 
+
+You can download and install RStudio without R but it won't do anything for you.    
+You need R to use RStudio!!
+
+:::
 
 ### Orientation to RStudio
 
 ```{r}
 #| echo: false
+#| eval: false
 #| column: margin
 #| label: fig-Rstudio
 #| fig-cap: "What RSutdio looks like when you first open it."
 include_graphics("images/initial_RStudio.png")
 ```
 
-When you open RStudio for the first time, you will see three primary panes (@fig-Rstudio... we will discuss these panes in more detail soon!) Navigating to `File > New File > RScript` will open a new R script and reveal the fourth pane.
+When you open RStudio for the first time, you will see three primary panes. The one on the left works identically to Navigating to `File > New File > RScript` will open a new R script and reveal the fourth pane. $^*$. [$^*$ **R Scripts** are ways to keep a record of your code so that you can pick up where you left off, build on previous work, and share your efforts. We will give introduce R Scripts more formally soon!]{.column-margin} 
 
-#### Coding in RStudio {.unnumbered}
 
-Just like in our vanilla R, RStudio does not "know" what you have written until you enter it into memory. There are a few ways to do this, but our preferred way is to highlight the code you intend to run, and then click the `Run` button in the top right portion of the R script pane (Alternatively press Ctrl+Return for Windows/Linux or ⌘+Return on OS X). @fig-Rstudio2 shows that **after entering the code:**
 
-1.  Code (and any of its outputs -- in this case the output of `x + y` which returns `5`) appears in the terminal pane (bottom left).\
-2.  Variables in working memory appear in environment pane (top right).
+Like  vanilla R (and all computer languages) RStudio does not "know" what you wrote until you enter it into memory. When There are a few ways to do this, but our preferred way is to highlight the code you intend to run, and then click the `Run` button in the top right portion of the R script pane (Alternatively press Ctrl+Return for Windows/Linux or ⌘+Return on OS X). @fig-Rstudio2 first introduces our four panes in RStudio.  
 
 ```{r}
 #| echo: false
-#| column: body
+#| column: margin
 #| label: fig-Rstudio2
 #| fig-cap: "An image of RStudio with a file open and two lines of code assigning `1` to `x` and `4` to `y`, shown before (**A**) and after (**B**) the code is entered into the working memory by highlighting it and clicking `Run`. Note that after the code is executed, it appears in the R Console pane (bottom left), and the assigned variables are displayed in the Environment pane."
-include_graphics("images/RstudioPanes2.png")
+include_graphics("images/RstudioPanes2b.png")
 ```
 
-#### A Tour of the RStudio Panes {.unnumbered}
+- @fig-Rstudio2 A shows some simple code typed into the scripts pane (top left). But as this is not yet entered, we do not see it in the R console pane (bottom left), and our environment is still empty (top right).
 
-Above we saw that we develop R Scripts in the "Source Pane" (top left), that executed code lives in the "Console Pane (bottom left), and that objects in working memory are shown in the "Environment Pane" (top right). @fig-Rstudio3 also shows that plots are shown in the "Plots Pane" (bottom right).
+- @fig-Rstudio2 B shows that after entering this code, both the code  (and any of its outputs -- in this case the output of `x + y` which returns `5`) appears in the terminal pane (bottom left). We also see that   Variables in working memory appear in environment pane (top right).
+
+
 
 ```{r}
 #| echo: false
@@ -252,3 +315,7 @@ RStudio has a bunch of eatures to make your life easier. Here are the three that
 #| fig-cap: "Tab-suggesting help you find your function and rovide a quick summary of how to use the function."
 include_graphics("images/tabsuggest.png")
 ```
+
+## We're ready 
+
+Now that you have R and RStudio installed, you should be ready to learn how to do things in R in prepration or doing usefull things in R! 
