@@ -10,6 +10,7 @@ book:
     - part: rbootcamp/chapters/Rbootcamp/Rbootcamp.qmd
       chapters: 
         - rbootcamp/chapters/setUpandOrientation/setUpandOrientation.qmd
+        - rbootcamp/chapters/r_as_a_calculator/r_as_a_calculator.qmd
     - references.qmd
 
 bibliography: references.bib
