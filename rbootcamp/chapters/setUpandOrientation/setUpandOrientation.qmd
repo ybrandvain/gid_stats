@@ -24,28 +24,44 @@ library(knitr)
 #| column: margin 
 #| label: fig-experience
 #| fig-cap: "The `R` logo!"
+#| fig-alt: "The R logo, which represents the programming language R"
 include_graphics("images/r.jpeg")
 ```
 
 `R` is a computer language and environment for statistical computing & graphics. It is script-based (text computer code) and not GUI-based (not point and click with menus).
 
--   `R` is open-source and free.\
--   `R` is excellent for data manipulation, visualization, and modeling.
--   `R` allows for reproducible research in a single script.
--   `R` Widely used in academia and industry.
--   `R`'s powers can be extended by many packages built for statistical and data science tasks.
+**You should use R because:**
+
+-   `R` is open-source and free.  
+-   `R` is excellent for data manipulation, visualization, and modeling.  
+-   `R` allows for reproducible research in a single script.  
+-   `R` Widely used in academia and industry.  
+-   `R`'s powers can be extended by many packages built for statistical and data science tasks.  
 
 ### When to use `R`
 
 Many of you have likely used Excel previously. Excel is a fine tool for entering and storing data, but it is less useful for analyzing large datasets, makes it difficult to conduct sophisticated statistical analyses, and does not facilitate reproducible analyses. R, on the other hand, allows for scalability, reproducibility, and customization—three things essential for modern data analysis. In summary:
 
+::: {.column-margin} 
+| Feature           | **Excel**                                    | **R**                                        |
+|-------------------|----------------------------------------------|---------------------------------------------|
+| Ease of Use       | <span style="color:green; font-weight:bold;">Easy</span> | <span style="color:red; font-weight:bold;">Needs code</span> |
+| Big Data          | <span style="color:red; font-weight:bold;">Nope</span> | <span style="color:green; font-weight:bold;">Yup</span>       |
+| Statistics        | <span style="color:red; font-weight:bold;">Limited</span> | <span style="color:green; font-weight:bold;">Limitless</span> |
+| Visualization     | <span style="color:red; font-weight:bold;">Limited</span> | <span style="color:green; font-weight:bold;">Limitless</span> |
+| Reproducibility   | <span style="color:red; font-weight:bold;">Nope</span> | <span style="color:green; font-weight:bold;">Yup</span>       |
+
+:::
+
 -   Excel is intuitive and good for data entry, as it provides a familiar spreadsheet interface, user-friendly tools for formatting and organizing data, and straightforward options for basic calculations.
--   R handles big data, advanced statistics, and custom visualizations much better. For instance, R can seamlessly analyze datasets with millions of rows, run advanced statistical models, and create high-quality visualizations (@fig-Ruse).
+-   R handles big data, advanced statistics, and custom visualizations much better. For instance, R can seamlessly analyze datasets with millions of rows, run advanced statistical models, and create high-quality visualizations (@fig-Ruse).   
+
 
 ```{r}
 #| label: fig-Ruse
 #| column: body
 #| fig-cap: "We use `R` all the time!"
+#| fig-alt: "A four panel figure. The leftmost panel is labeled with an **A** and shows a table being modified. Moving rightward, **B** shows a complex map with colored points and a PCA plot inset. Moving right again, **C** is a visualization of a complex statistical model, and finally **D** shows a publication quality scientific figure."
 #| echo: false
 include_graphics("images/usingR.png")
 ```
@@ -65,6 +81,7 @@ Because `R` is script-based and has so many capabilities, two incredible benefit
 #| column: body 
 #| label: fig-benefits
 #| fig-cap: "Two benefits of using `R`. **A)** You can have your complete analysis in one place. **B)** You can easily change something about your analysis without needing to *redo* everything."
+#| fig-alt: "A two panel figure. Part **A** is an arrow pointed rightward with six boxes. Box one says \"Read in Data\". Box two says \"Wrangle data into the right format\". Box three says \"Explore patterns in complex data\". Bow four says \"Apply statistical tests, fit model\". Box five says \"Produce summary stats and tables\". Box six says \"Create final figures\". Part **B** is a tweet from Sept 29 2005. It says \"Weekly plug for scripted analyses\". Coauthor:  \"Can you change x, y, about the analysis?\" Me in parentheses *not crying* says \"Yes\". In parentheses it then says *changes two lines of code*. "
 include_graphics("images/Rbenefits.png")
 ```
 
@@ -75,6 +92,7 @@ include_graphics("images/Rbenefits.png")
 #| column: margin 
 #| label: fig-learnR
 #| fig-cap: "The best way to learn `R` is to use `R`."
+#| fig-alt:  "A quote attributed to the R Manual states:  \"Many features of the system wil be unfamiliar and puzzling at first, but this puzzlement will soon disapper.\""
 include_graphics("images/rUse.png")
 ```
 
@@ -134,6 +152,7 @@ R comes preinstalled on many Linux systems, but you’ll want the newest version
 ```{r}
 #| label: fig-rscreen
 #| fig-cap: "The R screen."
+#| fig-alt: "A view of the R screen when R is opened."
 #| column: body
 #| echo: false
 include_graphics("images/rscreen.png")
@@ -154,6 +173,7 @@ While R can work ad a calculator, it offers so much more. A key to unlocking R's
 #| echo: false
 #| column: margin
 #| fig-cap: "The Arecibo message is an interstellar radio message carrying basic information about humanity and Earth that was sent to the globular cluster Messier 13 in 1974. It was meant as a demonstration of human technological achievement, rather than a real attempt to enter into a conversation with extraterrestrials. The image here has color added for clarity. Image and text from [wikipedia](https://en.wikipedia.org/wiki/Arecibo_message)."
+#| fig-alt: "A visual representation of the 1974 Arecibo radio message, encoded in binary code, depicting basic information about humanity including the solar system, DNA structure, a human figure, and the Arecibo telescope itself, intended to be understood by potential extraterrestrial intelligence"
 include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Arecibo_message.svg/300px-Arecibo_message.svg.png")
 ```
 
@@ -225,6 +245,7 @@ You need R to use RStudio!!
 #| column: margin
 #| label: fig-Rstudio
 #| fig-cap: "What RSutdio looks like when you first open it."
+#| fig-alt: "**Figure:** A screenshot of the RStudio interface upon opening a new session.  - The **console panel** (left) displays the R version (`R 4.4.1`) and startup information, including the following message:  R version 4.4.1 (2024-06-14) -- \"Race for Your Life\";   Copyright (C) 2024 The R Foundation for Statistical Computing   Platform: x86_64-apple-darwin20  ; R is free software and comes with ABSOLUTELY NO WARRANTY.   You are welcome to redistribute it under certain conditions.   Type 'license()' or 'licence()' for distribution details.  Natural language support but running in an English locale.  R is a collaborative project with many contributors.  Type 'contributors()' for more information and   'citation()' on how to cite R or R packages in publications.   Type 'demo()' for some demos, 'help()' for on-line help, or   'help.start()' for an HTML browser interface to help. Type 'q()' to quit R.  - The **environment panel** (top-right) is empty, showing the message \"Environment is empty,\" indicating no objects are currently loaded into memory.  - The **files, plots, packages, and help panel** (bottom-right) is empty, with no files, plots, or additional information displayed.  The RStudio top menu bar is visible, showing options like \"File,\" \"Edit,\" \"Code,\" \"View,\" and others. The current folder is labeled \"untitled folder.\""
 include_graphics("images/initial_RStudio.png")
 ```
 
@@ -236,6 +257,7 @@ When you open RStudio for the first time, you will see three primary panes. The 
 #| column: margin
 #| label: fig-Rstudio2
 #| fig-cap: "An image of RStudio with a file open and two lines of code assigning `1` to `x` and `4` to `y`, shown before (**A**) and after (**B**) the code is entered into the working memory by highlighting it and clicking `Run`. Note that after the code is executed, it appears in the R Console pane (bottom left), and the assigned variables are displayed in the Environment pane."
+#| fig-alt: "**Figure A:** A screenshot of RStudio before running code. The R script editor contains the following code:   # My first RStudio script   # Assigning variables into memory x <- 1 ; y <- 4;  x + y.   The console panel at the bottom is empty, with no output displayed. The environment panel on the right shows \"Environment is empty,\" indicating no objects have been created in memory. The file and plots panels are also empty. **Figure B:** A screenshot of RStudio after running the code. The same code is visible in the script editor, with the `Run` button highlighted. The console panel at the bottom shows the following output:   `> x <- 1`,   `> y <- 4`, `> x + y  : [1] 5 `. The environment panel on the right now contains two objects: `x` with a value of 1 and `y` with a value of 4. The file and plots panels remain empty."
 include_graphics("images/RstudioPanes2b.png")
 ```
 
@@ -253,6 +275,7 @@ Like vanilla R (and all computer languages) RStudio does not "know" what you wro
 #| column: body
 #| label: fig-Rstudio3
 #| fig-cap: "More panes = less pain. A brief tour of RStudio's panes."
+#| fig-alt: "**Figure:** A screenshot of the RStudio interface divided into four labeled panes.  - **Pane 1 (top-left):** The R script editor contains the following code:  # My first RStudio script   # Assigning variables into memory; `x <- 1`; `y <- 4`, `x + y`;  `help(faithful)`;` `plot(faithful)`.  The line `plot(faithful)` is highlighted. - **Pane 2 (bottom-left):** The console shows the execution of the script. Output includes: `> x <- 1`; `> y <- 4`;   `> x + y:  [1] 5`; `> help(faithful)`,  `> plot(faithful)`.  - **Pane 3 (top-right):** The environment panel lists two variables: `x` with a value of 1 and `y` with a value of 4.- **Pane 4 (bottom-right):** The plots panel displays a scatterplot of the `faithful` dataset, showing the relationship between \"waiting\" (y-axis) and \"eruptions\" (x-axis). The points form a clustered pattern." 
 include_graphics("images/RstudioPanes3.png")
 ```
 
@@ -266,13 +289,16 @@ include_graphics("images/RstudioPanes3.png")
 
 
 **<span style="color:red;">Pane 2 (bottom left)</span> The Console pane</span>** is basically the *R command prompt* from vanilla `R`, it is were you  directly interact with `R`. You can type commands here to execute them immediately. It will display output, messages, and error logs.  
+
 ```{r}
 #| echo: false
 #| column: margin
 #| label: fig-Rstudio4
-#| fig-cap: "Showing the History and Help tabs of panes 3 and 4, respectively."
+#| fig-cap: "Showing the History and Help tabs of panes 3 and 4, respectively." 
+#| fig-alt: "**Figure:** A screenshot of two panes in the RStudio interface.  - **Pane 3 (top):** The R script e History panel displays the following code:  `x <- 1` ; `y <- 4`, `  `x + y`;  `help(faithful)`;  `plot(faithful)`. - **Pane 4 (bottom):** The help panel is open and displays the documentation for the `faithful` dataset. The title reads \"Old Faithful Geyser Data,\" followed by a description: \"Waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA.\" Additional sections like \"Usage\" and \"Format\" are visible but not fully displayed in the screenshot."
 include_graphics("images/RstudioPanes4.png")
 ```
+
 **<span style="color:red;">Pane 3 (top right)</span> The Environment/History pane** shows what `R` has in working memory and what it has done.    
 
  - The *Environment Tab* shows all objects (e.g., data frames, vectors) currently in memory.     
@@ -311,6 +337,7 @@ Navigate your command history by pressing the `Up` arrow key in the Console. Thi
 #| column: body
 #| label: fig-tabsuggest
 #| fig-cap: "Tab-suggesting help you find your function and rovide a quick summary of how to use the function."
+#| fig-alt:  "A screenshot of the RStudio tab completion popup showing suggestions for logarithmic functions. The highlighted suggestion is \"log\", with the general syntax \"log(x, base = exp(1))\" displayed in the tooltip. The tooltip provides the following description: \"Logarithms and Exponentials. log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base. log1p(x) computes log(1+x) accurately..."  
 include_graphics("images/tabsuggest.png")
 ```
 :::
