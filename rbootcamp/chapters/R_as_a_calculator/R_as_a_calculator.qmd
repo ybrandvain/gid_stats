@@ -518,7 +518,7 @@ For this reason, **make sure that your code works as expected after removing eve
 ------------------------------------------------------------------------
 
 ::: {.goals style="background-color: #000000; color: #FFFFFF ;padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
-In this chapter we learned how to do simple math in R, how to assign variables, write/save scripts, and use functions.  As we now know how to do some simple stuff in R, in the next chapters we will transition towards doing useful stuff in R.  
+In this chapter we learned how to do simple math in R, how to assign variables, write/save scripts, and use functions.  As we now know how to do some simple stuff in R. Next we will investigate the different types of data in R, and  in the next chapters we will introduce the data types and data structures that allow us to do even more with R as we transition towards doing useful stuff in R.  
 :::
 
 ------------------------------------------------------------------------
