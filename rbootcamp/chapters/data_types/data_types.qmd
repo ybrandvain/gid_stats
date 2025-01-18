@@ -1,0 +1,190 @@
+# Data types in R  
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(webexercises)
+library(knitr)
+```
+
+::: {.goals style="background-color: #e6fcff; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"}
+**In the previous chapter**, we focused on getting familiar with R and understanding its basic functionality. Specifically, we covered:
+
+-   *What is R?*\
+-   *How to open R*\
+-   *Arithmetic in R*\
+-   *Vectorized operations in R*\
+-   *Object assignment in R*\
+-   *Using and writing R functions*\
+-   *Writing and saving a simple R script*
+
+**In this chapter**, we will build on that foundation by focusing on working with data in R. We will cover the following topics:
+
+-   **Understanding R data types:** Explore numeric, logical, character, and factor data types. Learn how to create them, identify which type you're using, when to use each type, and why they matter.\
+:::
+
+Most of what you work with in `R` is either a vector or something built from vectors. However, vectors themselves can contain different types of data—such as numbers, words, or logical values. These are referred to as **data types**. By combining vectors, we can create more complex objects, which are known as **data structures**. Understanding both data types and data structures is essential for effectively coding in `R`. Data types determine what kind of information a vector holds, while data structures dictate how these vectors are organized and interact. Numerous `R` functions only work as expected if the data are of the appropriate type and structure.
+
+In this chapter we introduce the common data types we use in R. In the next chapter we introduce data structures!
+
+### Data Types
+
+**Why We Care About Data Types in R.** R handles different types of data in specific ways. Understanding these data types is crucial because what you can do with your data depends on how R interprets it. For example, although you know that `1 + "two"` equals `3`, R cannot add a number and a word. So, to use R effectively, you will need to make sure the type of data R has in memory matches the type it needs to have to do what you want. Knowing how to identify, create, and work with the right data types will make your analyses smoother and more intuitive. It will also help you understand `R`'s error messages and confusing results when things don't work as expected.
+
+So, here are the four most common data types in `R` (you might see various `Date` types as well), how to make vectors of each. To see which data type you are dealing with you can either use the [`class()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/class.html) function or look at the Environment pane (@fig-envpane).
+
+```{r}
+#| echo: false
+#| column: margin
+#| label: fig-envpane
+#| fig-cap: "The environment pane provides information on the type of data in each R object in working memory!"
+include_graphics("images/environ_pane.png")
+```
+
+#### Numeric Data Types in R
+
+In statistical analyses, numbers are at the heart of most computations, making [numeric](https://stat.ethz.ch/R-manual/R-devel/library/base/html/numeric.html) data one of the most fundamental types in R. R handles numeric data in two main forms: **doubles** and **integers**.
+
+-   [**Doubles**](https://stat.ethz.ch/R-manual/R-devel/library/base/html/double.html): The default numeric type in R, doubles are designed to represent numbers with decimal places. They allow for precise calculations involving fractions or very large/small numbers. For most applications, doubles are sufficient. By default, entering numbers into a vector will create a numeric vector with double precision ( [`help(double)`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/double.html) for more information).
+
+```{r}
+num_vector <- c(1, 2, 4)
+class(num_vector) # Output: "numeric"
+```
+
+-   [**Integers**](https://stat.ethz.ch/R-manual/R-devel/library/base/html/integer.html): Representing whole numbers, integers are more memory-efficient and can prevent rounding errors in some cases. To explicitly declare integers, append an `L` to the number (See [`help(integer)`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/integer.html) for more information),
+
+```{r}
+int_vector <- c(1L, 2L, 4L)
+class(int_vector) # Output: "integer"
+```
+
+::: {.callout-warning collapse="true"}
+## Sometimes Numbers Should Not Be `Numeric`
+
+In biology, numbers often act as identifiers rather than quantities, such as sample IDs or gene IDs. Treating these identifiers as numeric can lead to unintended analyses. For instance, if you mistakenly model a sample ID as numeric, R may assume a continuous relationship (e.g., regression) instead of treating it as a categorical variable (e.g., ANOVA).
+:::
+
+#### Logical Data types in R
+
+[Logical vectors](https://stat.ethz.ch/R-manual/R-devel/library/base/html/logical.html) are one of the core data types in R, designed to store values of **TRUE**, **FALSE**, or **NA** (missing values). See [`help(logical)`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/logical.html) for more information). We can make logical vectors in one of two ways.
+
+-   **Defining Manually**: Logical vectors can be created directly, by writing out entries as `T` and `F` (or `TRUE` ond `FALSE` if you're not into the whole brevity thing)
+
+```{r}
+logical_vector <- c(TRUE, FALSE, TRUE, TRUE) 
+class(logical_vector)  # Output: "logical"
+```
+
+-   **Using Logical Operators**: More often logical vectors arise from questions we ask of the data[R provides several operators to generate logical vectors: <br> \newline - **Equality**: `==`, `!=` <br> \newline  - **Comparison**: `<`, `<=`, `>`, `>=` <br> \newline  - **Connectors**: `&` (and), `|` (or), `!` (not)]{.column-margin}. For example:
+
+```{r}
+# Logical comparison
+c(7, 4, 9, 5) >= 5 # Asking is each element equal to or greater than 5?
+```
+
+::: {.callout-warning collapse="true"}
+## Beware of Floating-Point Errors in Logical Comparisons
+
+Logical comparisons in R, especially involving numeric data, can yield unexpected results due to floating-point representation. Computers often represent decimal numbers approximately, which can lead to subtle issues. **For example: 0.1 + 0.2 should equals 0.3, right? `R` does not think so!**
+
+```{r}
+0.1 + 0.2 == 0.3  # Asking does 0.1 plus 0.2 equal 0.3?
+```
+
+The issue comes from how computers represent numbers with decimals. The result of (0.1 + 0.2) is stored as a number slightly different from (0.3), making the logical comparison fail. So you should always check to make sure that `R` is evaluating your logical queries as intended.
+
+**How to Avoid This:** If this is a problem, there is a simple solution! Instead of checking for exact equality, use a tolerance-based comparison. That is, check if the difference between two values is smaller than a very small threshold (e.g. `1e-10`), to bypass this issue
+
+```{r}
+abs((0.1 + 0.2) - 0.3) < 1e-10
+```
+:::
+
+##### Switching from logical to numeric (and vice versa) {.unnumbered}
+
+R thinks of `FALSE` as 0 and `TRUE` as 1. This can be handy for e.g. counting the number or proportion of things that satisfy our logical question. Use the [`as.numeric()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/numeric.html) function to switch from logical to numeric:
+
+```{r}
+as.numeric(c(TRUE, FALSE, TRUE))
+```
+
+We can similarly switch from numeric to logical, but here, `R` takes every non-zero value as `TRUE`
+
+```{r}
+as.logical(c(1,0,-1))
+```
+
+#### Character Data in R
+
+Character data in R represents text or strings, such as names, labels, or any non-numeric data. Characters are essential for storing and processing textual information in datasets, such as species names, sample IDs, or experimental labels. See [`help(character)`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/character.html) for more information). You can create character data by enclosing text in quotation marks, either single (`'`) or double (`"`). :
+
+```{r}
+char_vector <- c("apple-pit", "banana", "cherry", "banana")
+class(char_vector)
+```
+
+::: {.callout-warning collapse="true"}
+## In R vectors can only have one type of variable
+
+If you have a mix of numeric and character entries, `R` decides this is a character vector:
+
+```{r}
+mixed_vec  <- c(1, "apple") 
+print(mixed_vec)
+class(mixed_vec)
+```
+
+You can make `R` treat this as a numeric vector with the [`as.numeric()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/numeric.html) function. Here, entries that are not numbers become `NA`
+
+```{r}
+as.numeric(mixed_vec)
+```
+:::
+
+### Factors in R
+
+Factors in R are used to represent categorical data. They are similar to character data but include additional structure that is helpful for statistical modeling and data visualization. While characters are purely text, factors assign underlying integer values to categories, which allows R to treat them as levels in a defined order.
+
+You can create factors using the `factor()` or `as.factor()` function: [`levels` are all the potential values of this factor. By default `R` lists levels in alphabetical order. We will show you how to change this later.]{.column-margin}
+
+```{r}
+factor_vector <- factor(char_vector)
+factor_vector
+class(factor_vector)
+```
+
+You can easily switch back to a character using `as.character()`
+
+```{r}
+as.character(factor_vector) |>
+  class()
+```
+
+::: {.callout-warning collapse="true"}
+## Be Careful When Converting Factors to Numeric
+
+Converting numbers to factors with `as.factor()` is straightforward:
+
+```{r}
+as.factor(c(9, 3))
+```
+
+However, converting factors back to numbers can be **tricky**. By default, R uses the **underlying level indices** (the integers representing the factor levels), not the original values. For example:
+
+```{r}
+as.factor(c(9, 3)) |>
+  as.numeric()
+```
+
+This will return the **positions** of the factor levels, not the original numbers.
+
+To correctly recover the numeric values, first convert the factor to a character and then to numeric:
+
+```{r}
+as.factor(c(9, 3)) |>
+  as.character() |>
+  as.numeric()
+```
+:::

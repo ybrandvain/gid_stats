@@ -1,0 +1,133 @@
+# Data Structures in R
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(webexercises)
+library(knitr)
+```
+
+```{r}
+#| echo: false
+#| column: body
+#| label: fig-datastructure
+#| fig-cap: "The primary data structures in `R`. Adapted from "
+include_graphics("images/data_structures.png")
+```
+
+The most common data structures in R (@fig-datastructure) are different arrangements of vectors:
+
+-   **Vector:** is simply an ordered collection of elements, all of which must be of the same type (e.g., numeric, character, or logical).
+
+-   **Matrix:** A matrix is a two-dimensional arrangement of elements, organized into rows and columns. Like vectors, all elements in a matrix must be of the same type.
+
+-   **Array:** An array is a multi-dimensional generalization of a matrix. While a matrix is two-dimensional, an array can have three or more dimensions, making it useful for representing more complex data structures. Like vectors and matrices, all elements in an array must be of the same type.
+
+-   **Data frame:** A data frame is a two-dimensional table-like structure where each column can be of a different type (e.g., numeric, character, or logical), but all columns must have the same length. Data frames are one of the most commonly used structures for organizing datasets in R.
+
+-   **List:** A list is a flexible data structure that can hold elements of different types and sizes, including vectors, matrices, arrays, and even other lists.
+
+Let's dig a bit deeper into each type!
+
+## **Vectors**
+
+We have already worked with vectors. We have seen that we can create a vector using the `c()` function, separating elements with commas `,`. In this section, we’ll expand on that foundation and provide some additional tips for working with vectors in R.
+
+::: {.goals style="background-color: #e6fcff; padding: 1px; border: 1px solid #ddd; border-radius: 1px;"}
+By the end of this section, you should be able to create, learn about and name vectors in R.
+:::
+
+### Making vectors  
+
+-   **Making a vector in increments of 1:** You can create a vector that starts at one value and goes to another in integer increments using a colon (`:`) as follows: `start : end`. Most often we use this to sequentially order observations (e.g. from 1:`n`). Here I have a different example (going from three to neative one) to highlight the fact that this approach can go backwards and need not strart at one
+
+```{r}
+#| column: margin
+# A vector from 3 to -1 
+# in integer increments
+3 : -1  
+```
+
+**Making a vector in arbitrary increments:**
+
+To create a vector that increases in non-integer increments (e.g., 3/4), use the [`seq()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/seq.html) function: `seq(from = start, to = end, by = increment)`. Alternatively, you can specify a desired length for the vector: `seq(from = start, to = end, length = length_wanted)`.
+
+```{r}
+#| column: margin
+# A vector from 1 to 4 in increments of 3/4
+seq(from = 1, to = 4, by = 3/4)
+```
+
+**Making a vector of repeating values:** To create a vector with repeating patterns (which you may do when e.g. designing a factorial experiment), use the [`rep()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/rep.html) function. For example:
+
+-   To repeat each value four times: `rep(c(0, 1), each = 4)`: `r rep(c(0, 1), each = 4)`.\
+-   To repeat the entire sequence four times: `rep(c(0, 1), times = 4)`: `r rep(c(0, 1), times = 4)`.
+
+### Learning about a vector  
+
+**Determining the length of a vector:** Use the [`length()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/length.html) function to find the number of elements in a vector. For example, to find how many islands are listed in R's built-in [`islands`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/slength.html) dataset:
+
+```{r}
+#| column: margin
+# The number of islands 
+length(islands) 
+```
+
+**Viewing a subset of a large vector:** When working with long vectors, you may want to preview only the first or last few elements. Use the [`head()`](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/head.html) or [`tail()`](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/head.html) functions, respectively.
+
+```{r}
+#| column: margin
+# The last three islands
+tail(islands, n = 3) 
+```
+
+### Named vectors
+
+```{r}
+#| column: margin
+# Genotype frequencies
+p <- 0.2     
+q <- 1 - p
+# Named vector of genotype frequencies
+c(AA=p^2, Aa =2*p*q, aa = q^2) # ollow HWE
+```
+
+**Named vectors:** Some vectors, like the `islands` dataset, include names for their elements. These are known as named vectors. Each entry is associated with a name (e.g., the name of an island) and a value (e.g., the area of the island). You can create named vectors in two ways:\
+1. Assign names when creating the vector. 2. Add names to an existing vector using the [`names()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/names.html) function. You can also retrieve the names of the elements in a vector:
+
+For example:
+
+```{r}
+p <- 0.2  # Allele frequency
+q <- 1 - p  # Allele frequency
+geno_freqs <- c(p^2, 2 * p * q, q^2)          # Genotype frequencies vector
+names(geno_freqs) <- c("AA", "Aa", "aa")      # Assign genotype names
+print(geno_freqs)  # Display the named vector
+```
+
+```{r}
+#| column: margin
+# Names of Elements in geno_freqs
+names(geno_freqs)
+```
+
+## Matrices and arrays
+
+When working with data in R, matrices and arrays provide powerful ways to handle structured information. Both are used for organizing data in rows and columns (and beyond), Matrices are two dimensional (with `m` rows and `n` columns), and arrays generalize a matrix intro an arbitrary number of dimensions. For now w focus on matrices, as they are simpler and more common.
+
+You can think of a matrix as `n` vectors (each of length `m`) joined together. Each vector in a matrix must be made up of the same data type (e.g., all numeric, all character, etc..), and vectors are of the same length. Usually, all observations in a row should make sense together (e.g. if columns are heights weights and age, the values in a given row should come from the same individual).
+
+::: {.goals style="background-color: #e6fcff; padding: 1px; border: 1px solid #ddd; border-radius: 1px;"}
+By the end of this section, you should be able to create, learn about and name matrices in R.
+:::
+
+**Matrix**
+
+**Array**
+
+**Data frame**.
+
+**List**
+
+## Getting Data into R.
