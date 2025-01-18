@@ -158,7 +158,7 @@ R comes preinstalled on many Linux systems, but you’ll want the newest version
 include_graphics("images/rscreen.png")
 ```
 
-**Open up the `R` program you just downloaded** $^*$. [$^*$ This might be the only time you open `R` like this. As we introduce below, `R` is usually used via RStudio or some other IDE.]{.column-margin} A boring white screen --the command prompt-- awaits your instructions (@fig-rscreen). The R command prompt is an interactive workspace--it provides immediate feedback on calculations and commands. Start by typing `1 + 1`. You will see that nothing happens until you hit enter, at which point you see something like this:
+**Open up the `R` program you just downloaded** $^*$. [$^*$ This might be the only time you open `R` like this. As we introduce below, `R` is usually used via RStudio or some other IDE.]{.column-margin} A boring white screen -- the command prompt. -- awaits your instructions (@fig-rscreen). The R command prompt is an interactive workspace--it provides immediate feedback on calculations and commands. Start by typing `1 + 1`. You will see that nothing happens until you hit enter, at which point you see something like this:
 
 ```{r}
 1 + 1
